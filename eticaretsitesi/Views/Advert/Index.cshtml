@@ -1,0 +1,27 @@
+﻿@model IEnumerable<eticaretsitesi.Models.Advert>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reklam</h1>
+<p><a class="btn btn-success" asp-action="Create">Yeni Kayıt</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.AdvertName)</th>
+            <th>@Html.DisplayNameFor(model=>model.AdvertPicture)</th>
+            <th>@Html.DisplayNameFor(model => model.AdvertLocation)</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem=>item.AdvertName)</td>
+            <td>@Html.DisplayFor(modelItem => item.AdvertPicture)</td>
+            <td>@Html.DisplayFor(modelItem => item.AdvertLocation)</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
