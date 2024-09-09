@@ -1,0 +1,22 @@
+﻿@model eticaretsitesi.Models.Advert
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Yeni Kayıt</h1>
+<form asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label class="form-label">Reklam Adı</label>
+        <input asp-for="AdvertName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Reklam Resim</label>
+        <input asp-for="AdvertPicture" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Reklam Konum</label>
+        <input asp-for="AdvertLocation" class="form-control" />
+    </div>
+    <input class="btn btn-danger" type="submit" value="Kaydet" />
+</form>

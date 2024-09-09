@@ -1,0 +1,26 @@
+﻿@model eticaretsitesi.Models.Advert
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<h1>Edit</h1>
+
+<form asp-action="Edit" method="post">
+
+    <div class="mb-3">
+        <input type="hidden" asp-for="AdvertId" />
+        <label class="form-label">Reklam Adı</label>
+        <input asp-for="AdvertName" readonly class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Reklam Resim</label>
+        <input asp-for="AdvertPicture" readonly class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Reklam Konum</label>
+        <input asp-for="AdvertLocation" readonly class="form-control" />
+    </div>
+    <input class="btn btn-danger" type="submit" value="Bu Kaydı Silmek İstiyorum" />
+    <a asp-action="Index" class="btn btn-dark">Önceki Sayfa</a>
+</form>
