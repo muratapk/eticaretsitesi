@@ -4,19 +4,24 @@
 }
 
 <h1>Yeni Kayıt</h1>
-<form asp-action="Create" method="post">
-
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <!--dosya gönderirken mutlaka enctype=multipart/form-data yazmak zorundayız-->
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="mb-3">
         <label class="form-label">Reklam Adı</label>
         <input asp-for="AdvertName" class="form-control" />
+        <span asp-validation-for="AdvertName" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label">Reklam Resim</label>
-        <input asp-for="AdvertPicture" class="form-control" />
+        <!--<input asp-for="AdvertPicture" class="form-control" />-->
+        <input type="file" asp-for="Picture" class="form-control" />
+        
     </div>
     <div class="mb-3">
         <label class="form-label">Reklam Konum</label>
         <input asp-for="AdvertLocation" class="form-control" />
+        <span asp-validation-for="AdvertLocation" class="text-danger"></span>
     </div>
     <input class="btn btn-danger" type="submit" value="Kaydet" />
 </form>

@@ -5,20 +5,24 @@
 
 <h1>Edit</h1>
 
-<form asp-action="Edit" method="post">
-
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="mb-3">
         <input type="hidden" asp-for="AdvertId"/>
         <label class="form-label">Reklam Adı</label>
         <input asp-for="AdvertName" class="form-control" />
+        <span asp-validation-for="AdvertName" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label">Reklam Resim</label>
-        <input asp-for="AdvertPicture" class="form-control" />
+        <input type="hidden" asp-for="AdvertPicture"/>
+        <input asp-for="Picture" type="file" class="form-control" />
+        <img src="/Reklam_Image/@Model.AdvertPicture" height="100px" width="100px" />
     </div>
     <div class="mb-3">
         <label class="form-label">Reklam Konum</label>
         <input asp-for="AdvertLocation" class="form-control" />
+        <span asp-validation-for="AdvertLocation" class="text-danger"></span>
     </div>
     <input class="btn btn-danger" type="submit" value="Kaydet" />
 </form>

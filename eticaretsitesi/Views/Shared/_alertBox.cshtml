@@ -1,0 +1,12 @@
+﻿@if(TempData["Mesaj"]!=null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        Swal.fire({
+            title: "E Ticaret Sitesi",
+            text: "İşlem Yapldı",
+            icon: "question"
+        });
+    </script>
+}
