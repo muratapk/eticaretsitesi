@@ -14,5 +14,7 @@ namespace eticaretsitesi.Models
 
         [Display(Name ="Kategori Resim:")]
         public string CategoryPicture { get; set; } = string.Empty;
+        virtual public List<Product>? Products { get; set; }
+        //bir categori birden fazla ürün bilgisine sahip olacak
     }
 }
