@@ -1,8 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    /* Views shared içindeki homelayout dosyasını al*/
 }
+@await Component.InvokeAsync("ProductCategory")
+@await Component.InvokeAsync("ProductSlider")
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>

@@ -1,3 +1,4 @@
+using eticaretsitesi.Data;
 using eticaretsitesi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,10 +8,11 @@ namespace eticaretsitesi.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly Context _context;
+        public HomeController(ILogger<HomeController> logger,Context context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -21,6 +23,11 @@ namespace eticaretsitesi.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        public IActionResult Details(int ?id)
+        {
+            var result = _context.Products.Find(id);
+            return View(result);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

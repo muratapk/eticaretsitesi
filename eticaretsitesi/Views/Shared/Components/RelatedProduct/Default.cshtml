@@ -1,0 +1,29 @@
+﻿@model List<eticaretsitesi.Models.Product>
+
+
+<div class="vesitable">
+    <div class="owl-carousel vegetable-carousel justify-content-center">
+        <!--dongu başlangıç-->
+        @foreach(var item in Model)
+        {
+            
+     
+        <div class="border border-primary rounded position-relative vesitable-item">
+            <div class="vesitable-img">
+                <img src="/Product_Image/@item.ProductPicture" class="img-fluid w-100 rounded-top" alt="">
+            </div>
+            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">@item.ProductName</div>
+            <div class="p-4 pb-0 rounded-bottom">
+                <h4>@item.CategoryId</h4>
+                <p>@item.ProductDescription</p>
+                <div class="d-flex justify-content-between flex-lg-wrap">
+                    <p class="text-dark fs-5 fw-bold">@item.ProductPrice</p>
+                    <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Sepette Ekle</a>
+                </div>
+            </div>
+        </div>
+        }
+        <!--dongu bitis-->
+ 
+    </div>
+</div>
