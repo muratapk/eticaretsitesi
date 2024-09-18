@@ -236,6 +236,33 @@
 
     <!-- Template Javascript -->
     <script src="~/Home/js/main.js"></script>
+    <script>
+        $(document).ready(function () { 
+            $("#Price").change(function () {
+                var deger = $(this).val();
+                alert(deger);
+
+                $.ajax({
+                 url:'/Home/ArtanAzalan',
+                 type:'Get',
+                 data:'Veri:deger',
+                 datatype:'Json',
+                    success: function (data) {
+                        var productList = "";
+                        $.each(data, function (index, product) {
+                            alert(product.ProductName);
+
+                        })
+                    
+                    },
+                    error: function (error) { 
+                        alert(error);
+                    }
+                });
+            });
+        
+          });
+    </script>
     </body>
 
 </html>
