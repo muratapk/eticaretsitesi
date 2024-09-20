@@ -6,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//session nesnesi program içine tanýmlýyorum
+builder.Services.AddSession(options => {
+ options.IdleTimeout = TimeSpan.FromSeconds(30);
+ options.Cookie.IsEssential = true;
+
+});
+//session zaman ve cookie tanýmlý
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +28,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

@@ -1,0 +1,19 @@
+﻿@model eticaretsitesi.Dto.CartViewDto
+ <!--Sepet Başlangıç-->
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
+        <i class="fa fa-shopping-bag fa-2x"></i>
+        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">@Model.GrandTotal</span>
+
+    </a>
+    <div class="dropdown-menu m-0 bg-secondary rounded-0">
+        @foreach(var item in Model.cartItems)
+        {
+            <a href="cart.html" class="dropdown-item">@item.ProductName -> @item.Price</a>
+        }
+       
+       
+    </div>
+</div>
+
+<!--Sepet Bitiş-->
